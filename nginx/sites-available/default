@@ -1,0 +1,16 @@
+# /etc/nginx/sites-available/default
+# This will be the default handler for all the server_name‘s that aren’t explicitly defined,
+# and that includes the IP address. i.e. permit visit by ip of site.
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+
+  # this block won't work if nginx -v < 1.19.4
+  # if it is older - refer https://www.codedodle.com/disable-direct-ip-access-nginx.html
+  listen 443 default_server;
+  listen [::]:443 default_server;
+  ssl_reject_handshake on;
+
+  server_name _;
+  return 444;
+}

@@ -1,0 +1,8 @@
+[user]
+	name = luculliano
+	email = vederecento@gmail.com
+	signingKey = 0x1F8BE9167FF0F8AC
+[tag]
+	gpgSign = true
+[init]
+	defaultBranch = main

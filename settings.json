@@ -1,0 +1,24 @@
+{
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": false,
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "workbench.preferredLightColorTheme": "Visual Studio Dark",
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.autoSave": "onWindowChange",
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.renderWhitespace": "all",
+    "editor.renderLineHighlight": "none",
+    "workbench.preferredHighContrastColorTheme": "Visual Studio Dark",
+    "editor.wordWrap": "on",
+    "editor.rulers": [
+        80,120
+    ],
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.preferredHighContrastLightColorTheme": "Visual Studio Dark",
+    "window.zoomLevel": 1
+}
