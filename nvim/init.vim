@@ -103,6 +103,9 @@ Plug 'https://github.com/preservim/tagbar.git'
 " for frontend
 Plug 'mattn/emmet-vim'
 
+" for markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
 call plug#end()
 
 " turn on theme
