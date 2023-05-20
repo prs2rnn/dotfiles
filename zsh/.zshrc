@@ -49,9 +49,9 @@ alias gc='git commit'
 alias gb='git branch'
 alias gch='git checkout'
 alias gpl="git pull"
-alias gploh="git pull origin HEAD"
+alias gplom="git pull origin main"
 alias gph="git push"
-alias gphoh="git push origin HEAD"
+alias gphom="git push origin main"
 alias gd="git diff"
 alias gcl="git clone"
 alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
