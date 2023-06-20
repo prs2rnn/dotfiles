@@ -65,7 +65,7 @@ alias grs="git restore --staged $1"  # when modified and add
 export EDITOR=nvim
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/sbin:$PATH
-export TERM=xterm-256color  # for kitty
+# export TERM=xterm-256color  # for kitty
 
 ###............ SOURCE ............###
 
