@@ -100,6 +100,9 @@ Plug 'preservim/nerdtree'
 " ctags - install it first: pacman -S ctags
 Plug 'https://github.com/preservim/tagbar.git'
 
+" for frontend
+Plug 'mattn/emmet-vim'
+
 call plug#end()
 
 " turn on theme
@@ -169,6 +172,17 @@ tnoremap <ESC> <C-\><C-n>
 
 " ctags bind
 nmap <F8> :TagbarToggle<CR>
+
+" Enable emmet plugin just for html/css
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+" ,, to trigger emmet. html:5 + ,,. ul>li*3 and you are able to do this in
+" visual mode. ul#customer>li*10>{same $}-id for ul and same inside all li, $
+" is for numerate(optional). div+h2 for make it at same level. btn, hdr, bq +
+" ,, as aliases for elements. div.name_class + ,,. .name_class - auto div will
+" be. h1{text inside}-will be there. p*4>lorem[10] for add text as lorem.
+" [style] for style.
+let g:user_emmet_leader_key=','
 
 " completeion for CSS
 filetype plugin on
