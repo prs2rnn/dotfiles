@@ -134,6 +134,7 @@ autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellesca
 autocmd FileType python map <buffer> <leader>b :w<CR>:exec '!black' shellescape(@%, 1)<CR>
 " autocmd FileType python map <buffer> <leader>i :w<CR>:exec '!isort' shellescape(@%, 1)<CR>
 nnoremap <leader>i :PyrightOrganizeImports<CR>
+autocmd FileType html map <buffer> <leader>t :w<CR>:exec '!tidy -m' shellescape(@%, 1)<CR>
 
 " open files with no extension as txt
 autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=txt | endif
@@ -188,3 +189,6 @@ let g:user_emmet_leader_key=','
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 inoremap <C-X> <C-X><C-O>
+
+" turn on tag referrence by %
+runtime macros/matchit.vim
