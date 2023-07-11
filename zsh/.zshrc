@@ -30,6 +30,7 @@ alias ff='find . -name $1'
 alias grepf='grep -rin $1 $2'  # $1-lookfor; $2-dir
 alias rl='readlink -f $1'
 alias v='$EDITOR'  # EDITOR=nvim first
+alias xo='xdg-open $1'
 
 alias ..='cd ..'
 alias ...='cd ../..'
