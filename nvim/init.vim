@@ -59,7 +59,7 @@ autocmd FileType python setlocal cc=80
 " section for vim-plug-plugin manager for vim
 call plug#begin()
 " theme
-Plug 'https://github.com/morhetz/gruvbox.git'
+" Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/joshdick/onedark.vim.git'
 
 " Telescope requires plenary to function
@@ -95,7 +95,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'https://github.com/tpope/vim-commentary.git'
 
 " nerdtree instead of netrw
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 
 " ctags - install it first: pacman -S ctags
 Plug 'https://github.com/preservim/tagbar.git'
@@ -140,7 +140,7 @@ autocmd FileType html map <buffer> <leader>t :w<CR>:exec '!tidy -m' shellescape(
 autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=txt | endif
 
 " call telescope.lua config file
-lua require('set_dir')
+lua require('plug')
 
 " Telescope bindings
 nnoremap <leader>f <cmd>Telescope find_files<CR>
@@ -162,11 +162,11 @@ let g:netrw_sort_sequence = '[\/]$,*'
 " shift+i for hidden. m for mode. dirs will be created automatically.
 " shift+r for update files. I can use /search and other keybindings inside.
 " t to newtab, s to split when open
-nnoremap <C-e> :NERDTreeToggle<CR>
+" nnoremap <C-e> :NERDTreeToggle<CR>
 " open NerdTree on the file you’re editing to quickly perform operations on it
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 " Automatically delete the buffer of the file you just deleted with NerdTree
-let NERDTreeAutoDeleteBuffer = 1
+" let NERDTreeAutoDeleteBuffer = 1
 
 " block for terminal settings (type 'exit' + press 'enter' to close)
 tnoremap <ESC> <C-\><C-n>
@@ -190,7 +190,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 inoremap <C-X> <C-X><C-O>
 
-" turn on tag referrence by %
+" turn on tag referrence by ctrl+%
 runtime macros/matchit.vim
 
 " zsh aliases support in vim shell

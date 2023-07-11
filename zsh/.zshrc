@@ -31,13 +31,15 @@ alias grepf='grep -rin $1 $2'  # $1-lookfor; $2-dir
 alias rl='readlink -f $1'
 alias v='$EDITOR'  # EDITOR=nvim first
 alias xo='xdg-open $1'
+alias c='xclip'
+alias p='xclip -o'  # paste
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias gpge='gpg -e -a -r $1 $2'  # $1 is id, $2 is file
+alias gpge='gpg -e -a -r 0x1F8BE9167FF0F8AC $2'  # $1 is id, $2 is file
 alias mpv720='noglob mpv --ytdl-format=best[height=720] $1'
 alias mpv_audio='f(){ noglob yt-dlp -o - "$1" | mpv --no-video -;  unset -f f; }; f'
 alias check_ip="curl https://ipinfo.io/json" # or /ip for plain-text ip

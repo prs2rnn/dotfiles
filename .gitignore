@@ -1,2 +1,4 @@
 setenv.sh
 cache/
+config
+.gitconfig
