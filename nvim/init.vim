@@ -158,16 +158,6 @@ let g:netrw_liststyle = 3  " tree instead of plain view
 " sort is affecting only: directories on the top, files below
 let g:netrw_sort_sequence = '[\/]$,*'
 
-" nerdtree bindings (:Nerdtree), ? for help inside.
-" shift+i for hidden. m for mode. dirs will be created automatically.
-" shift+r for update files. I can use /search and other keybindings inside.
-" t to newtab, s to split when open
-" nnoremap <C-e> :NERDTreeToggle<CR>
-" open NerdTree on the file you’re editing to quickly perform operations on it
-" nnoremap <C-f> :NERDTreeFind<CR>
-" Automatically delete the buffer of the file you just deleted with NerdTree
-" let NERDTreeAutoDeleteBuffer = 1
-
 " block for terminal settings (type 'exit' + press 'enter' to close)
 tnoremap <ESC> <C-\><C-n>
 
