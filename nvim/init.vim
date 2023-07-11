@@ -192,3 +192,6 @@ inoremap <C-X> <C-X><C-O>
 
 " turn on tag referrence by %
 runtime macros/matchit.vim
+
+" zsh aliases support in vim shell
+set shellcmdflag=-ic
