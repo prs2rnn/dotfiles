@@ -94,9 +94,6 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " gcc, gc, gcap for commenting
 Plug 'https://github.com/tpope/vim-commentary.git'
 
-" nerdtree instead of netrw
-" Plug 'preservim/nerdtree'
-
 " ctags - install it first: pacman -S ctags
 Plug 'https://github.com/preservim/tagbar.git'
 
@@ -162,12 +159,10 @@ let g:netrw_sort_sequence = '[\/]$,*'
 let g:netrw_keepdir = 0
 " change the copy command. mostly to enable recursive copy of directories.
 let g:netrw_localcopydircmd = 'cp -r'
-nnoremap <C-F> :Lexplore %:p:h<CR>
-nnoremap <C-E> :Lexplore<CR>
+nnoremap <C-E> :Explore<CR>
 " navigation
 function! NetrwMapping()
-  nmap <buffer> <C-E> :Lexplore<CR>
-  nmap <buffer> <C-F> :Lexplore<CR>
+  nmap <buffer> <C-E> :bd<CR>
 endfunction
 augroup netrw_mapping
   autocmd!
@@ -181,14 +176,9 @@ tnoremap <ESC> <C-\><C-n>
 nmap <F8> :TagbarToggle<CR>
 
 " Enable emmet plugin just for html/css
+" ,, to trigger emmet; html:5; ol[type="A"]#customer>li*10>{same $}
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,sass,scss EmmetInstall
-" ,, to trigger emmet. html:5 + ,,. ul>li*3 and you are able to do this in
-" visual mode. ul#customer>li*10>{same $}-id for ul and same inside all li, $
-" is for numerate(optional). div+h2 for make it at same level. btn, hdr, bq +
-" ,, as aliases for elements. div.name_class + ,,. .name_class - auto div will
-" be. h1{text inside}-will be there. p*4>lorem[10] for add text as lorem.
-" [style] for style.
 let g:user_emmet_leader_key=','
 
 autocmd FileType sass setlocal shiftwidth=4 softtabstop=4 expandtab
