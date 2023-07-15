@@ -102,6 +102,7 @@ Plug 'https://github.com/preservim/tagbar.git'
 
 " for frontend
 Plug 'mattn/emmet-vim'
+Plug 'https://github.com/gregsexton/MatchTag.git'
 
 call plug#end()
 
@@ -166,7 +167,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " Enable emmet plugin just for html/css
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,sass,scss EmmetInstall
 " ,, to trigger emmet. html:5 + ,,. ul>li*3 and you are able to do this in
 " visual mode. ul#customer>li*10>{same $}-id for ul and same inside all li, $
 " is for numerate(optional). div+h2 for make it at same level. btn, hdr, bq +
@@ -174,6 +175,8 @@ autocmd FileType html,css EmmetInstall
 " be. h1{text inside}-will be there. p*4>lorem[10] for add text as lorem.
 " [style] for style.
 let g:user_emmet_leader_key=','
+
+autocmd FileType sass,scss setlocal shiftwidth=4 softtabstop=4 expandtab
 
 " completeion for CSS
 filetype plugin on

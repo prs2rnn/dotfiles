@@ -31,7 +31,7 @@ alias grepf='grep -rin $1 $2'  # $1-lookfor; $2-dir
 alias rl='readlink -f $1'
 alias v='$EDITOR'  # EDITOR=nvim first
 alias xo='xdg-open $1'
-alias c='xclip'
+alias c='xclip -selection clipboard'
 alias p='xclip -o'  # paste
 
 alias ..='cd ..'
@@ -44,6 +44,8 @@ alias mpv720='noglob mpv --ytdl-format=best[height=720] $1'
 alias mpv_audio='f(){ noglob yt-dlp -o - "$1" | mpv --no-video -;  unset -f f; }; f'
 alias check_ip="curl https://ipinfo.io/json" # or /ip for plain-text ip
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias hdmi_on="xrandr --output HDMI-1 --auto && xrandr --output eDP-1 --off"
+alias hdmi_off="xrandr --output HDMI-1 --off && xrandr --output eDP-1 --on"
 
 alias gs='git status'
 alias ga='git add'
