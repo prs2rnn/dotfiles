@@ -158,6 +158,21 @@ hi DiagnosticHint  guifg=White
 let g:netrw_liststyle = 3  " tree instead of plain view
 " sort is affecting only: directories on the top, files below
 let g:netrw_sort_sequence = '[\/]$,*'
+" this helps you avoid the move files error.
+let g:netrw_keepdir = 0
+" change the copy command. mostly to enable recursive copy of directories.
+let g:netrw_localcopydircmd = 'cp -r'
+nnoremap <C-F> :Lexplore %:p:h<CR>
+nnoremap <C-E> :Lexplore<CR>
+" navigation
+function! NetrwMapping()
+  nmap <buffer> <C-E> :Lexplore<CR>
+  nmap <buffer> <C-F> :Lexplore<CR>
+endfunction
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
 
 " block for terminal settings (type 'exit' + press 'enter' to close)
 tnoremap <ESC> <C-\><C-n>
@@ -176,7 +191,7 @@ autocmd FileType html,css,sass,scss EmmetInstall
 " [style] for style.
 let g:user_emmet_leader_key=','
 
-autocmd FileType sass,scss setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType sass setlocal shiftwidth=4 softtabstop=4 expandtab
 
 " completeion for CSS
 filetype plugin on
