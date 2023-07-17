@@ -181,8 +181,6 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,sass,scss EmmetInstall
 let g:user_emmet_leader_key=','
 
-autocmd FileType sass setlocal shiftwidth=4 softtabstop=4 expandtab
-
 " completeion for CSS
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete

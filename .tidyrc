@@ -3,3 +3,4 @@ indent-spaces: 2
 wrap: 72
 markup: yes
 tidy-mark: no
+drop-empty-elements: no
