@@ -47,6 +47,12 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 alias hdmi_on="xrandr --output HDMI-1 --auto && xrandr --output eDP-1 --off"
 alias hdmi_off="xrandr --output HDMI-1 --off && xrandr --output eDP-1 --on"
 
+
+alias response-test="curl -s -w 'Testing Website Response Time for: %{url_effective}\n\nLookup Time:\t\t%{time_namelookup}\n\
+Connect Time:\t\t%{time_connect}\nPre-transfer Time:\t%{time_pretransfer}\nStart-transfer Time:\t%{time_starttransfer}\n\
+Appcon Time:\t\t%{time_appconnect}\nRedirect Time:\t\t%{time_redirect}\n\nTotal Time:\t\t%{time_total}\n\nReferrer:\
+\thttps://www.techrepublic.com/article/how-to-test-website-speeds-curl\n' -o /dev/null $1"
+
 alias gs='git status'
 alias ga='git add'
 alias ga.='git add .'
