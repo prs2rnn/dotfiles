@@ -1,6 +1,6 @@
 -- lspconfig
 local nvim_lsp = require('lspconfig')
-local servers = { 'pyright', 'tsserver' }
+local servers = { 'pyright', "tsserver" }
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -29,9 +29,20 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 for _, lsp in ipairs(servers) do
-	nvim_lsp[lsp].setup {
-		on_attach = on_attach
-	}
+  if lsp == 'tsserver' then
+    nvim_lsp[lsp].setup {
+      on_attach = on_attach,
+      init_options = {
+        preferences = {
+          disableSuggestions = true,
+        },
+      },
+    }
+  else
+    nvim_lsp[lsp].setup {
+      on_attach = on_attach
+    }
+  end
 end
 
 
