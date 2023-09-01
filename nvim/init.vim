@@ -18,21 +18,20 @@ set noswapfile
 set ignorecase
 set smartcase
 
-" gide status mode couse lightline is installed
+" hide status mode couse lightline is installed
 set noshowmode
 
 " block for good tabulation in python as PEP-8 and so on
-set tabstop=4
-set softtabstop=4  " 4 spaces in 1 tab
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2  " 2 spaces in 1 tab
+set shiftwidth=2
 set expandtab  " set tabs as spaces
 set autoindent
 set fileformat=unix
 filetype indent on  " load filetype-specific indent files
 set smartindent
-set tabstop=2
-set expandtab
-set shiftwidth=2
+
+autocmd FileType python,sass setlocal shiftwidth=4 softtabstop=4 expandtab
 
 " automatically strip trailing spaces on save (*.py if for python only)
 autocmd BufWritePre * :%s/\s\+$//e
@@ -54,7 +53,7 @@ autocmd BufWritePre * call TrimEndLines()
 set clipboard+=unnamedplus
 
 " enable colorcolumn
-autocmd FileType python setlocal cc=80
+autocmd FileType python,javascript setlocal cc=80
 
 " section for vim-plug-plugin manager for vim
 call plug#begin()
@@ -68,6 +67,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " An optional plugin recommended by Telescope docs
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make' }
+
+" nerdtree instead of netrw
+Plug 'preservim/nerdtree'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -132,7 +134,15 @@ autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellesca
 autocmd FileType python map <buffer> <leader>b :w<CR>:exec '!black' shellescape(@%, 1)<CR>
 " autocmd FileType python map <buffer> <leader>i :w<CR>:exec '!isort' shellescape(@%, 1)<CR>
 nnoremap <leader>i :PyrightOrganizeImports<CR>
-autocmd FileType html map <buffer> <leader>t :w<CR>:exec '!tidy -m' shellescape(@%, 1)<CR>
+
+autocmd FileType html map <buffer> <leader>b :w<CR>:exec '!tidy -m' shellescape(@%, 1)<CR>
+autocmd FileType html imap <buffer> <leader>b <esc>:w<CR>:exec '!tidy -m' shellescape(@%, 1)<CR>
+
+autocmd FileType javascript map <buffer> <F5> :w<CR>:exec '!node' shellescape(@%, 1)<CR>
+autocmd FileType javascript imap <buffer> <F5> <esc>:w<CR>:exec '!node' shellescape(@%, 1)<CR>
+
+autocmd FileType javascript map <buffer> <leader>b :w<CR>:exec '!prettier --write' shellescape(@%, 1)<CR>
+autocmd FileType javascript imap <buffer> <leader>b <esc>:w<CR>:exec '!prettier --write' shellescape(@%, 1)<CR>
 
 " open files with no extension as txt
 autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=txt | endif
@@ -158,16 +168,26 @@ let g:netrw_sort_sequence = '[\/]$,*'
 " this helps you avoid the move files error.
 let g:netrw_keepdir = 0
 " change the copy command. mostly to enable recursive copy of directories.
-let g:netrw_localcopydircmd = 'cp -r'
-nnoremap <C-E> :Explore<CR>
+" let g:netrw_localcopydircmd = 'cp -r'
+" nnoremap <C-E> :Explore<CR>
 " navigation
-function! NetrwMapping()
-  nmap <buffer> <C-E> :bd<CR>
-endfunction
-augroup netrw_mapping
-  autocmd!
-  autocmd filetype netrw call NetrwMapping()
-augroup END
+" function! NetrwMapping()
+"   nmap <buffer> <C-E> :bd<CR>
+" endfunction
+" augroup netrw_mapping
+"   autocmd!
+"   autocmd filetype netrw call NetrwMapping()
+" augroup END
+
+" nerdtree bindings (:Nerdtree), ? for help inside.
+" shift+i for hidden. m for mode. dirs will be created automatically.
+" shift+r for update files. I can use /search and other keybindings inside.
+" t to newtab, s to split when open
+nnoremap <C-e> :NERDTreeToggle<CR>
+" open NerdTree on the file you’re editing to quickly perform operations on it
+nnoremap <C-f> :NERDTreeFind<CR>
+" Automatically delete the buffer of the file you just deleted with NerdTree
+let NERDTreeAutoDeleteBuffer = 1
 
 " block for terminal settings (type 'exit' + press 'enter' to close)
 tnoremap <ESC> <C-\><C-n>
