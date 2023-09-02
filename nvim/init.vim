@@ -132,17 +132,15 @@ autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%,
 autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 autocmd FileType python map <buffer> <leader>b :w<CR>:exec '!black' shellescape(@%, 1)<CR>
-" autocmd FileType python map <buffer> <leader>i :w<CR>:exec '!isort' shellescape(@%, 1)<CR>
-nnoremap <leader>i :PyrightOrganizeImports<CR>
+autocmd FileType python nnoremap <leader>i :PyrightOrganizeImports<CR>
 
 " autocmd FileType html map <buffer> <leader>b :w<CR>:exec '!tidy -m' shellescape(@%, 1)<CR>
-" autocmd FileType html imap <buffer> <leader>b <esc>:w<CR>:exec '!tidy -m' shellescape(@%, 1)<CR>
 
 autocmd FileType javascript map <buffer> <F5> :w<CR>:exec '!node' shellescape(@%, 1)<CR>
 autocmd FileType javascript imap <buffer> <F5> <esc>:w<CR>:exec '!node' shellescape(@%, 1)<CR>
+autocmd FileType javascript map <buffer> <leader>i :w<CR>:exec '!import-sort --write' shellescape(@%, 1)<CR>
 
 autocmd FileType javascript,json,scss,css,markdown,html,typescript,yaml map <buffer> <leader>b :w<CR>:exec '!prettier --write' shellescape(@%, 1)<CR>
-autocmd FileType javascript,json,scss,css,markdown,html,typescript,yaml imap <buffer> <leader>b <esc>:w<CR>:exec '!prettier --write' shellescape(@%, 1)<CR>
 
 " open files with no extension as txt
 autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=txt | endif
