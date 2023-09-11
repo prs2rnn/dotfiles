@@ -53,7 +53,7 @@ autocmd BufWritePre * call TrimEndLines()
 set clipboard+=unnamedplus
 
 " enable colorcolumn
-autocmd FileType python,javascript,typescript setlocal cc=80
+autocmd FileType python,javascript,typescript,html setlocal cc=80
 
 " section for vim-plug-plugin manager for vim
 call plug#begin()
