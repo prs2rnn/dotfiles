@@ -16,8 +16,8 @@ zstyle ':omz:directories' aliases no
 ###............ ALIASES ............###
 
 alias rsyncp='rsync -avr -e "ssh -p 7722"'
-alias conwgW='sudo wg-quick up /etc/wireguard/wars.conf && notify-send -i security-high "connection is secured" "Europe"'
-alias diconwgW='sudo wg-quick down /etc/wireguard/wars.conf && notify-send -i security-low "connection is not secured"'
+alias conwgW='sudo wg-quick up /etc/wireguard/spb.conf && notify-send -i security-high "connection is secured" "Europe"'
+alias diconwgW='sudo wg-quick down /etc/wireguard/spb.conf && notify-send -i security-low "connection is not secured"'
 
 alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
 alias ls='ls --color=auto'
