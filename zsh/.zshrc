@@ -82,6 +82,7 @@ export PATH=~/.npm-global/bin:$PATH
 ###............ SOURCE ............###
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/docker-aliases.sh
 
 ###............ PLUGINS ............###
 
