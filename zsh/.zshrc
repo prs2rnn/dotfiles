@@ -43,7 +43,7 @@ alias gpge='gpg -e -a -r 0x1F8BE9167FF0F8AC $2'  # $1 is id, $2 is file
 alias mpv720='noglob mpv --ytdl-format=best[height=720] $1'
 alias mpv_audio='f(){ noglob yt-dlp -o - "$1" | mpv --no-video -;  unset -f f; }; f'
 alias check_ip="curl https://ipinfo.io/json" # or /ip for plain-text ip
-alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
 alias hdmi_on="xrandr --output HDMI-1 --auto && xrandr --output eDP-1 --off"
 alias hdmi_off="xrandr --output HDMI-1 --off && xrandr --output eDP-1 --on"
 
