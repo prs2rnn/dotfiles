@@ -34,7 +34,7 @@ for _, lsp in ipairs(servers) do
       on_attach = on_attach,
       init_options = {
         preferences = {
-          disableSuggestions = true,
+          disableSuggestions = false,
         },
       },
     }
