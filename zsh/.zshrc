@@ -82,9 +82,9 @@ export PATH=~/.npm-global/bin:$PATH
 ###............ SOURCE ............###
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH/docker-aliases.sh
+# source $ZSH/docker-aliases.sh
 
 ###............ PLUGINS ............###
 
 # just put it in plugins directory
-plugins=(poetry)
+plugins=(poetry npm git systemd docker rsync node docker-compose ufw)
