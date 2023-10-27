@@ -1,0 +1,10 @@
+[user]
+	name = prs2rnn
+	email = developer.prs2rnn@gmail.com
+	signingKey = 0xDE3309EBF49550C3
+[tag]
+	gpgSign = true
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true

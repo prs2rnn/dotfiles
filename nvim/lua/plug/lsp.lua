@@ -29,20 +29,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 for _, lsp in ipairs(servers) do
-  if lsp == 'tsserver' then
-    nvim_lsp[lsp].setup {
-      on_attach = on_attach,
-      init_options = {
-        preferences = {
-          disableSuggestions = false,
-        },
-      },
-    }
-  else
-    nvim_lsp[lsp].setup {
-      on_attach = on_attach
-    }
-  end
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach
+  }
 end
 
 
