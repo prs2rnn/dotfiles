@@ -99,9 +99,13 @@ Plug 'https://github.com/tpope/vim-commentary.git'
 " ctags - install it first: pacman -S ctags
 Plug 'https://github.com/preservim/tagbar.git'
 
+" autoclose
+Plug 'm4xshen/autoclose.nvim'
+
 " for frontend
 Plug 'mattn/emmet-vim'
 Plug 'https://github.com/gregsexton/MatchTag.git'
+Plug 'https://github.com/prettier/vim-prettier.git'
 
 call plug#end()
 
@@ -138,9 +142,6 @@ autocmd FileType python nnoremap <leader>i :PyrightOrganizeImports<CR>
 
 autocmd FileType javascript map <buffer> <F5> :w<CR>:exec '!node' shellescape(@%, 1)<CR>
 autocmd FileType javascript imap <buffer> <F5> <esc>:w<CR>:exec '!node' shellescape(@%, 1)<CR>
-autocmd FileType javascript map <buffer> <leader>i :w<CR>:exec '!import-sort --write' shellescape(@%, 1)<CR>
-
-autocmd FileType javascript,json,scss,css,markdown,html,typescript,yaml map <buffer> <leader>b :w<CR>:exec '!prettier --write' shellescape(@%, 1)<CR>
 
 " open files with no extension as txt
 autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=txt | endif
@@ -209,3 +210,8 @@ runtime macros/matchit.vim
 
 " zsh aliases support in vim shell
 set shellcmdflag=-ic
+
+" :Prettier
+nmap <Leader>b <Plug>(Prettier)
+" let g:prettier#autoformat = 1
+" let g:prettier#autoformat_require_pragma = 0
