@@ -78,6 +78,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/sbin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 # export TERM=xterm-256color  # for kitty
+export GPG_TTY=$(tty)
 
 ###............ SOURCE ............###
 
