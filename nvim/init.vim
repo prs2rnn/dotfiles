@@ -106,6 +106,10 @@ Plug 'm4xshen/autoclose.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'https://github.com/gregsexton/MatchTag.git'
 Plug 'https://github.com/prettier/vim-prettier.git'
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 
 call plug#end()
 
