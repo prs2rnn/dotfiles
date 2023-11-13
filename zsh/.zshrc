@@ -13,11 +13,9 @@ zstyle ':completion:*:ssh:*' hosts
 # disable aliases of omz
 zstyle ':omz:directories' aliases no
 
-###............ ALIASES ............###
-
-alias rsyncp='rsync -avr -e "ssh -p 7722"'
-alias conwgW='sudo wg-quick up /etc/wireguard/spb.conf && notify-send -i security-high "connection is secured" "Europe"'
-alias diconwgW='sudo wg-quick down /etc/wireguard/spb.conf && notify-send -i security-low "connection is not secured"'
+# ALIASES
+alias conwgW='sudo wg-quick up /etc/wireguard/spb.conf'
+alias diconwgW='sudo wg-quick down /etc/wireguard/spb.conf'
 
 alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
 alias ls='ls --color=auto'
@@ -27,7 +25,6 @@ alias mkdir="mkdir -vp"
 alias rm='rm -rv'
 alias l='ls -lah'
 alias ff='find . -name $1'
-alias grepf='grep -rin $1 $2'  # $1-lookfor; $2-dir
 alias rl='readlink -f $1'
 alias v='$EDITOR'  # EDITOR=nvim first
 alias xo='xdg-open $1'
@@ -47,17 +44,14 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 alias hdmi_on="xrandr --output HDMI-1 --auto && xrandr --output eDP-1 --off"
 alias hdmi_off="xrandr --output HDMI-1 --off && xrandr --output eDP-1 --on"
 
-
 alias response-test="curl -s -w 'Testing Website Response Time for: %{url_effective}\n\nLookup Time:\t\t%{time_namelookup}\n\
 Connect Time:\t\t%{time_connect}\nPre-transfer Time:\t%{time_pretransfer}\nStart-transfer Time:\t%{time_starttransfer}\n\
 Appcon Time:\t\t%{time_appconnect}\nRedirect Time:\t\t%{time_redirect}\n\nTotal Time:\t\t%{time_total}\n\nReferrer:\
 \thttps://www.techrepublic.com/article/how-to-test-website-speeds-curl\n' -o /dev/null $1"
 
-# alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
-
-###............ EXPORTS ............###
-
+# EXPORTS
 export EDITOR=nvim
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/sbin:$PATH
@@ -65,12 +59,9 @@ export PATH=~/.npm-global/bin:$PATH
 # export TERM=xterm-256color  # for kitty
 export GPG_TTY=$(tty)
 
-###............ SOURCE ............###
+# PLUGINS
+# before sources!
+plugins=(archlinux poetry npm git systemd docker rsync node docker-compose ufw)
 
+# SOURCES
 source $ZSH/oh-my-zsh.sh
-# source $ZSH/docker-aliases.sh
-
-###............ PLUGINS ............###
-
-# just put it in plugins directory
-plugins=(poetry npm git systemd docker rsync node docker-compose ufw)
