@@ -53,22 +53,7 @@ Connect Time:\t\t%{time_connect}\nPre-transfer Time:\t%{time_pretransfer}\nStart
 Appcon Time:\t\t%{time_appconnect}\nRedirect Time:\t\t%{time_redirect}\n\nTotal Time:\t\t%{time_total}\n\nReferrer:\
 \thttps://www.techrepublic.com/article/how-to-test-website-speeds-curl\n' -o /dev/null $1"
 
-alias gs='git status'
-alias ga='git add'
-alias ga.='git add .'
-alias gc='git commit'
-alias gb='git branch'
-alias gch='git checkout'
-alias gpl="git pull"
-alias gplom="git pull origin main"
-alias gph="git push"
-alias gphom="git push origin main"
-alias gd="git diff"
-alias gcl="git clone"
-alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
-alias gre="git restore $1"  # when modified and not add
-alias grs="git restore --staged $1"  # when modified and add
-
+# alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
 
 ###............ EXPORTS ............###
