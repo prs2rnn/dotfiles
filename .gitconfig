@@ -1,0 +1,12 @@
+[core]
+	autocrlf = true
+	quotepath = false
+	editor = nvim
+[user]
+	email = developer.prs2rnn@gmail.com
+	name = prs2rnn
+[i18n]
+	commitEncoding = utf-8
+	logOutputEncoding = utf-8
+[color]
+	ui = true
