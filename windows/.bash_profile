@@ -35,3 +35,6 @@ alias ga='git add'
 alias ga.='git add .'
 alias gc='git commit'
 alias gb='git branch'
+
+# hugo
+alias hugoc='hugo --cleanDestinationDir'
