@@ -37,4 +37,4 @@ alias gc='git commit'
 alias gb='git branch'
 
 # hugo
-alias hugoc='hugo --cleanDestinationDir'
+alias hugoC='hugo --cleanDestinationDir'
