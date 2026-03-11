@@ -5,9 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#PS1='[\u@\h \W]\$ '
-# https://bashrcgenerator.com/
-PS1="\[$(tput bold)\]\[\033[38;5;69m\]\u@\h\[$(tput sgr0)\] \W]\\$ \[$(tput sgr0)\]"
+# PS1='[\u@\h \W]\$ '
+# https://itsfoss.com/bash-prompt-generator/
+# PS1="\[$(tput bold)\]\[\033[38;5;69m\]\u@\h\[$(tput sgr0)\] \W]\\$ \[$(tput sgr0)\]"
 
 # os usage aliases
 alias mv="mv -iv"

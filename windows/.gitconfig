@@ -1,7 +1,7 @@
 [core]
 	autocrlf = true
 	quotepath = false
-	editor = notepad++
+	editor = nvim
 [user]
 	email = developer.prs2rnn@gmail.com
 	name = prs2rnn
