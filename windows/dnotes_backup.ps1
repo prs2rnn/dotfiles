@@ -1,6 +1,6 @@
 # Variables
-$repositoryFolder = ""
-# $remoteRepo = ""
+$repositoryFolder = "~/Documents/My Notes 2026"
+$remoteRepo = "git@github.com:prs2rnn/notes.git"
 $commitMessage = "Backup on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 
 # Functions
@@ -35,8 +35,8 @@ try {
     Execute-Command "git commit -m `"$commitMessage`""
 
     # Push changes to remote repository
-    # Write-Host "Pushing changes to remote repository..."
-    # Execute-Command "git push"
+    Write-Host "Pushing changes to remote repository..."
+    Execute-Command "git push"
 
     # Script end
     Write-Host "Backup completed successfully!" -ForegroundColor Green
